@@ -16,8 +16,8 @@ function imprimir() {
 }
 
 
-agregar("Marisol Villanueva");
-borrarContacto("Maria Benitez");
+agregar("Maria Benitez");
+borrarContacto("Luis Mondragon");
 imprimir();
 
 
