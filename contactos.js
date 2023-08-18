@@ -17,7 +17,7 @@ function imprimir() {
 
 
 agregar("Marisol Villanueva");
-borrarContacto("Mario Fernandez");
+borrarContacto("Maria Benitez");
 imprimir();
 
 
