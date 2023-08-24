@@ -1,4 +1,4 @@
-let agendaDeContactos = [
+let listaDeContactos = [
     {
         id: 10,
         nombre: "John",
@@ -39,9 +39,11 @@ let agendaDeContactos = [
 
 
 
+
 function agregarContacto(nuevoContacto) {
-    agendaDeContactos.push(nuevoContacto);
+    listaDeContactos.push(nuevoContacto);
 }
+
 
 let contactoNuevo = {
     id: 13,
@@ -56,28 +58,32 @@ let contactoNuevo = {
 }
 
 
+
 function borrarContacto(nombre) {
-    agendaDeContactos = agendaDeContactos.filter(contacto => contacto.nombre !== nombre)
+    listaDeContactos = listaDeContactos.filter(contacto => contacto.nombre !== nombre)
 }
 
 
-function actualizarEdadContacto(objeto, nombreContacto, nuevaEdad) {
-    let index = objeto.findIndex(function (contacto) {
-        return contacto.nombre === nombreContacto;
-    });
 
-    if (index !== -1) {
-        objeto[index].edad = nuevaEdad;
+
+function actualizarEdad(listaContactoArray, nombreContacto, nuevaEdad) {
+    for (let i = 0; i < listaContactoArray.length; i++) {
+        if (listaContactoArray[i].nombre === nombreContacto) {
+            listaContactoArray[i].edad = nuevaEdad;
+            break;
+        }
     }
 }
 
+
+
 function imprimirContactos() {
-    console.log(agendaDeContactos);
+    console.log(listaDeContactos);
 }
 
 
 
 agregarContacto(contactoNuevo);
-borrarContacto();
-actualizarEdadContacto(agendaDeContactos)
+borrarContacto("John");
+actualizarEdad(listaDeContactos, "Arya", 18)
 imprimirContactos();
