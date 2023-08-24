@@ -84,6 +84,6 @@ function imprimirContactos() {
 
 
 agregarContacto(contactoNuevo);
-borrarContacto("John");
-actualizarEdad(listaDeContactos, "Arya", 18)
+borrarContacto();
+actualizarEdad(listaDeContactos)
 imprimirContactos();
