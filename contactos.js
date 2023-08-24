@@ -78,6 +78,6 @@ function imprimirContactos() {
 
 
 agregarContacto(contactoNuevo);
-borrarContacto("John");
+borrarContacto();
 actualizarEdadContacto(agendaDeContactos)
 imprimirContactos();
