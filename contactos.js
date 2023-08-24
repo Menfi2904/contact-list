@@ -1,45 +1,83 @@
-let agendaDeContactos = [];
-
-
-function agregarContacto(id, nombre, apellido, edad, telefono, ciudad, direccion) {
-    let contacto = {
-        id: id,
-        nombre: nombre,
-        apellido: apellido,
-        edad: edad,
-        telefono: telefono,
+let agendaDeContactos = [
+    {
+        id: 10,
+        nombre: "John",
+        apellido: "Snow",
+        edad: 25,
+        telefono: 5049523658,
         ubicaciones: {
-            ciudad: ciudad,
-            direccion: direccion
+            ciudad: "Winterfell",
+            direccion: "Norte",
         }
-    };
+    },
 
-    agendaDeContactos.push(contacto);
+    {
+        id: 11,
+        nombre: "Daenerys",
+        apellido: "Targaryen",
+        edad: 29,
+        telefono: 5049523658,
+        ubicaciones: {
+            ciudad: "DragonStone",
+            direccion: "Poniente",
+        }
+    },
+
+    {
+        id: 12,
+        nombre: "Arya",
+        apellido: "Stark",
+        edad: 17,
+        telefono: 5049523658,
+        ubicaciones: {
+            ciudad: "Winterfell",
+            direccion: "Norte",
+        }
+    }
+
+];
+
+
+
+function agregarContacto(nuevoContacto) {
+    agendaDeContactos.push(nuevoContacto);
+}
+
+let contactoNuevo = {
+    id: 13,
+    nombre: "Sansa",
+    apellido: "Stark",
+    edad: 20,
+    telefono: 50492368520,
+    ubicaciones: {
+        ciudad: "KingsLanding",
+        direccion: "East Coast",
+    }
 }
 
 
 function borrarContacto(nombre) {
-    agendaDeContactos = agendaDeContactos.filter(contacto => contacto.nombre !== nombre);
+    agendaDeContactos = agendaDeContactos.filter(contacto => contacto.nombre !== nombre)
 }
 
+
+function actualizarEdadContacto(objeto, nombreContacto, nuevaEdad) {
+    let index = objeto.findIndex(function (contacto) {
+        return contacto.nombre === nombreContacto;
+    });
+
+    if (index !== -1) {
+        objeto[index].edad = nuevaEdad;
+    }
+}
 
 function imprimirContactos() {
-    agendaDeContactos.forEach(contacto => {
-        console.log("ID de contacto: " + contacto.id);
-        console.log("Nombre completo: " + contacto.nombre + " " + contacto.apellido);
-        console.log("Edad: " + contacto.edad)
-        console.log("Telefono de contacto: " + contacto.telefono)
-        console.log("la ciudad del contacto: " + contacto.ubicaciones.ciudad + "," + " y la direccion es: " + contacto.ubicaciones.direccion)
-    }
-    )
+    console.log(agendaDeContactos);
 }
 
 
-agregarContacto(10001, "Arya", "Stark", 20, 5850046, "winterfell", "En el norte");
-agregarContacto(10026, "Jon", "Snow", 28, 5850047, "winterfell", "En el norte");
-agregarContacto(10027, "Sansa", "Stark", 23, 5850048, "winterfell", "En el norte");
-agregarContacto(10028, "Brandon", "Stark", 18, 5850049, "winterfell", "En el norte");
-agregarContacto(10029, "Daenerys", "Targaryen", 29, 5852550, "DragonStone", "Irlandia");
-borrarContacto("Brandon");
-imprimirContactos();
 
+agregarContacto(contactoNuevo);
+borrarContacto("John");
+actualizarEdadContacto(agendaDeContactos)
+imprimirContactos();
