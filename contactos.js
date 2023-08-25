@@ -4,7 +4,7 @@ let listaDeContactos = [
         nombre: "John",
         apellido: "Snow",
         edad: 25,
-        telefono: 5049523658,
+        telefono: 50495236587,
         ubicaciones: {
             ciudad: "Winterfell",
             direccion: "Norte",
@@ -16,7 +16,7 @@ let listaDeContactos = [
         nombre: "Daenerys",
         apellido: "Targaryen",
         edad: 29,
-        telefono: 5049523658,
+        telefono: 50492634250,
         ubicaciones: {
             ciudad: "DragonStone",
             direccion: "Poniente",
@@ -28,7 +28,7 @@ let listaDeContactos = [
         nombre: "Arya",
         apellido: "Stark",
         edad: 17,
-        telefono: 5049523658,
+        telefono: 50499254173,
         ubicaciones: {
             ciudad: "Winterfell",
             direccion: "Norte",
