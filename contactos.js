@@ -68,7 +68,7 @@ function borrarContacto(nombre) {
 
 
 
-function actualizarInformacion(listaContactoArray, nombreContacto, nuevoId, nuevoApellido, nuevaEdad, nuevoTelefono, nuevaCiudad, NuevaDireccion) {
+function actualizarInformacion(listaContactoArray, nombreContacto, nuevoId, nuevoApellido, nuevaEdad, nuevoTelefono, nuevaCiudad, nuevaDireccion) {
     for (let i = 0; i < listaContactoArray.length; i++) {
         if (listaContactoArray[i].nombre === nombreContacto) {
             listaContactoArray[i].id = nuevoId;
@@ -76,7 +76,7 @@ function actualizarInformacion(listaContactoArray, nombreContacto, nuevoId, nuev
             listaContactoArray[i].edad = nuevaEdad;
             listaContactoArray[i].telefono = nuevoTelefono;
             listaContactoArray[i].ubicaciones.ciudad = nuevaCiudad;
-            listaContactoArray[i].ubicaciones.direccion = NuevaDireccion;
+            listaContactoArray[i].ubicaciones.direccion = nuevaDireccion;
             break;
         }
     }
