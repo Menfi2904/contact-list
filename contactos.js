@@ -61,15 +61,22 @@ let contactoNuevo = {
 
 function borrarContacto(nombre) {
     listaDeContactos = listaDeContactos.filter(contacto => contacto.nombre !== nombre)
+
 }
 
 
 
 
-function actualizarEdad(listaContactoArray, nombreContacto, nuevaEdad) {
+
+function actualizarInformacion(listaContactoArray, nombreContacto, nuevoId, nuevoApellido, nuevaEdad, nuevoTelefono, nuevaCiudad, NuevaDireccion) {
     for (let i = 0; i < listaContactoArray.length; i++) {
         if (listaContactoArray[i].nombre === nombreContacto) {
+            listaContactoArray[i].id = nuevoId;
+            listaContactoArray[i].apellido = nuevoApellido;
             listaContactoArray[i].edad = nuevaEdad;
+            listaContactoArray[i].telefono = nuevoTelefono;
+            listaContactoArray[i].ubicaciones.ciudad = nuevaCiudad;
+            listaContactoArray[i].ubicaciones.direccion = NuevaDireccion;
             break;
         }
     }
@@ -85,5 +92,5 @@ function imprimirContactos() {
 
 agregarContacto(contactoNuevo);
 borrarContacto();
-actualizarEdad(listaDeContactos)
+actualizarInformacion(listaDeContactos, "Arya", 252, "North", 26, 85858585, "boston", "12523600")
 imprimirContactos();
